@@ -1,3 +1,4 @@
+<div class='aus_state'>
 <%= link_to 'NSW', calendar_show_path(date: @date, :region => 'New South Wales') %>
 <%= link_to 'VIC', calendar_show_path(date: @date, :region => 'Victoria') %>
 <%= link_to 'QLD', calendar_show_path(date: @date, :region => 'Queensland') %>
@@ -6,6 +7,7 @@
 <%= link_to 'ACT', calendar_show_path(date: @date, :region => 'Australian Capital Territory') %>
 <%= link_to 'TAS', calendar_show_path(date: @date, :region => 'Tasmania') %>
 <%= link_to 'NT', calendar_show_path(date: @date, :region => 'Northern Territory') %>
+</div>
 
 <div class="row">
   <div class="col-md-12 text-center">

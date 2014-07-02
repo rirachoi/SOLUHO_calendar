@@ -1,12 +1,8 @@
-<div class ='user_lists'>
-  <table>
+<div class ='user_info'>
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.username %> <em>(<%= user.dob %>)</em> </td>
-        <td><%= image_tag(user.image) if user.image %> </td>
-        <td><%= link_to("Delete", user_path(user.id), :data => { :confirm => 'Are you sure you want to delete this?', :method => :delete }) %></td>
-        <td></td>
-      </tr>
-    <% end %>
-  </table>
+      <%= image_tag(user.image, id: 'user_img') %>
+      <p><%= user.username %> <em>(<%= user.dob %>)</em>
+      <p>Email : <%= user.email%></p>
+      <p class='show_options'><%= link_to("Delete", user_path(user.id), :data => { :confirm => 'Are you sure you want to delete this?', :method => :delete }) %></p>
+     <% end %>
 </div>

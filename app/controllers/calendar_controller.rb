@@ -7,6 +7,8 @@ class CalendarController < ApplicationController
      @region = params[:region]
      @date = date_params
      country = Enrico::Country.new("aus", @region)
+     # struct_am = Astro::Moon.phasehunt.moon_full.strftime("%D %T %Z")
+     # raise params.inspect
      @public_holidays = country.public_holidays_for_month(@date)
      # raise params.inspect
   end

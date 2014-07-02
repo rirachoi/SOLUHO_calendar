@@ -49,7 +49,7 @@
   margin: 20px;
 }
 
-.show_options p, td a{
+.show_options p, .show_options a, td a{
   display: inline-block;
   padding: 3px;
   background-color: #FF8080;
@@ -58,8 +58,28 @@
 
 }
 
+#holiday_name{
+  padding: 3px;
+  background-color: #FF8080;
+  border-radius: 3px;
+  margin: 5px;
+}
+
 .show_options a, td a{
   color: white;
+}
+
+.user_info, #user_img{
+  display: inline-block;
+  vertical-align: bottom;
+  margin-top: 20px;
+}
+
+#user_img{
+  margin-left: 8%;
+  margin-right: 15px;
+  height: 100px;
+  width: 100px;
 }
 
 td{
