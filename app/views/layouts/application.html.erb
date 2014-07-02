@@ -9,7 +9,8 @@
   <body>
     <nav>
       <li><%= link_to('Home','/')%></li>
-      <li><%= link_to('Calendar', calendar_show_path(date: @date, :region => 'New South Wales'))%></li>
+      <li><%= link_to('Calendar(Australia)', calendar_show_path(date: @date, :region => 'New South Wales'))%></li>
+      <li><%= link_to('Calendar(International)')%></li>
     </nav>
     <nav>
        <%== smartnav %>

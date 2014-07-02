@@ -1,3 +1,3 @@
-<h1>Plan Your Events! </h1>
+<h1 id='home_h1'>Plan Your Events! </h1>
 
-<%= image_tag('http://i.imgur.com/fWgmluD.gif', :id => 'home_pic')%>
+<%= link_to(image_tag('http://i.imgur.com/nDDC2Xx.jpg', :id => 'home_pic'),calendar_show_path(date: @date, :region => 'New South Wales'), :title => 'Current Calendar') %>

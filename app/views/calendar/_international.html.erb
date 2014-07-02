@@ -1,0 +1,46 @@
+<div class='int_country'>
+  <%= link_to 'Austria', calendar_international_path(date: @date) %>
+  <%= link_to 'Belgium', calendar_international_path(date: @date) %>
+  <%= link_to 'China', calendar_international_path(date: @date) %>
+  <%= link_to 'Croatia', calendar_international_path(date: @date) %>
+  <%= link_to 'Czech Republic', calendar_international_path(date: @date) %>
+  <%= link_to 'Denmark', calendar_international_path(date: @date) %>
+  <%= link_to 'England', calendar_international_path(date: @date) %>
+  <%= link_to 'Estonia', calendar_international_path(date: @date %>
+  <%= link_to 'Finland', calendar_international_path(date: @date %>
+  <%= link_to 'Hong Kong', calendar_international_path(date: @date %>
+  <%= link_to 'Hungary', calendar_international_path(date: @date %>
+  <%= link_to 'Ireland', calendar_international_path(date: @date %>
+  <%= link_to 'Japan', calendar_international_path(date: @date %>
+  <%= link_to 'Norway', calendar_international_path(date: @date %>
+  <%= link_to 'Poland', calendar_international_path(date: @date %>
+  <%= link_to 'Portugal', calendar_international_path(date: @date %>
+  <%= link_to 'Russia', calendar_international_path(date: @date %>
+  <%= link_to 'South Africa', calendar_international_path(date: @date %>
+   <%= link_to 'South Korea', calendar_international_path(date: @date %>
+
+</div>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <div class="arrows">
+
+      <%= link_to calendar_international_path(date: @date - 12.month) do %>
+        <i><%=image_tag('http://i.imgur.com/9GN8wMm.png?1')%></i>
+      <% end %>
+
+      <%= link_to calendar_international_path(date: @date - 1.month) do %>
+        <i><%= image_tag("http://i.imgur.com/ca2RSq3.png?1")%></i>
+      <% end %>
+
+      <span id='current_calendar_date'><%= "#{@date.strftime("%B")} #{@date.year}" %></span>
+
+      <%= link_to calendar_international_path(date: @date + 1.month) do %>
+        <i ><%= image_tag('http://i.imgur.com/obLPimz.png?1')%></i>
+      <% end %>
+
+      <%= link_to calendar_international_path(date: @date + 12.month) do %>
+        <i><%= image_tag('http://i.imgur.com/ErCSqCA.png?1')%></i>
+      <% end %>
+    </div>
+  </div>
+</div>

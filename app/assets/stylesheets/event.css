@@ -17,26 +17,49 @@
 .list > div {
  margin-top: 10px;
  display: inline-block;
- width: 48%;
+
  vertical-align: top;
- margin-left:20px;
+ margin-left:10px;
 }
 
-.icon_description img {
-  height:50px;
-  width: 50px;
+.icon_description img{
+  height: 40px;
+  width: 40px;
+}
 
+.icon_description p{
+  font-size: 10px;
 }
 
 #kind{
   font-size: 15px;
-  text-align: right;
+  text-align: left;
   margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.event_details img{
+  height: 70px;
+  width: 70px;
 }
 
 .event_form p, .user_form{
   display: inline-block;
   margin: 20px;
+}
+
+.show_options p, td a{
+  display: inline-block;
+  padding: 3px;
+  background-color: #FF8080;
+  border-radius: 3px;
+  margin: 5px;
+
+}
+
+.show_options a, td a{
+  color: white;
 }
 
 td{

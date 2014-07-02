@@ -14,6 +14,12 @@ class CalendarController < ApplicationController
   def index
   end
 
+  def international
+    @country_code = params[:country_code]
+    @date = date_params
+    country = Enrico::Country.new(@country_code)
+    @public_holidays = country.public_holidays_for_month(@date)
+  end
 
   def date_params
     @date = params[:date] ? Date.parse(params[:date]) : Date.today

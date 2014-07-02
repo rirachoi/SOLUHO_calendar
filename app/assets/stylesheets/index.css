@@ -3,11 +3,12 @@ nav {
   font-family: serif;
   padding: 10px;
   margin-bottom: 20px;
-  background: rgba(200, 13, 0, 0.1);
+  background: #A30000;
   border-radius: 2px;
   max-width: 700px;
   margin-left: 23%;
   margin-right: 23%;
+  margin-top: 10px;
 }
 
 nav ul {
@@ -23,15 +24,37 @@ nav li, a{
 }
 
 nav a{
+  color: #DA9999;
   text-decoration: none;
 }
 
 nav a:hover{
   color: white;
+  text-decoration: none;
 }
 
 nav .blank{
   margin-right: 400px;
+}
+
+.sign_up > div{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.sign_up_left img{
+  margin-top: 30px;
+  margin-left: 30px;
+  border: 20px solid rgba(160, 117, 94, 0.3);
+}
+
+.user_form input{
+  width: 200px;
+}
+
+.container a:hover, a:hover{
+  text-decoration: none;
+  color: #990000;
 }
 
 .col-md-12 > div{

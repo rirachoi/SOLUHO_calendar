@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/calendar/year' => 'calendar#year'
   get '/calendar/show' => 'calendar#show'
   get '/calendar/index' => 'calendar#index'
+  get '/calendar/international' => 'calendar#international'
 
   get '/events/lists' => 'events#lists'
   # events_lists_path
