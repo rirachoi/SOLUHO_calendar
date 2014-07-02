@@ -40,6 +40,8 @@ gem 'astro_moon'
 
 gem 'bootstrap-sass'
 
+gem 'rails_12factor', group: :production
+
 group :development do
   gem 'pry-rails'
   gem 'better_errors'
