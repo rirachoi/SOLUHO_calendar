@@ -7,15 +7,15 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class='home_name'>
-    <h3><span class='main'>So</span>lar <span class='main'>Lu</span>nar <span class='main'>Ho</span>liday<span class='main'> Calendar</span></h3>
-  </div>
 
     <nav>
       <li><%= link_to('Home','/')%></li>
       <li><%= link_to('Calendar(Australia)', calendar_show_path(date: @date, :region => 'New South Wales'))%></li>
       <li><%= link_to('Calendar(International)', calendar_international_path(date: @date, country_code: "rok"))%></li>
     </nav>
+    <div class='home_name'>
+      <h3><span class='main'>So</span>lar <span class='main'>Lu</span>nar <span class='main'>Ho</span>liday</h3>
+    </div>
     <nav>
        <%== smartnav %>
     </nav>
