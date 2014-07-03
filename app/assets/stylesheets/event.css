@@ -3,8 +3,9 @@
 
 .icon_description p{
   display: inline-block;
-  margin: 5px;
   text-align: center;
+  font-size: 10px;
+  margin: 2px;
 }
 
 #current_calendar_date{
@@ -25,10 +26,6 @@
 .icon_description img{
   height: 40px;
   width: 40px;
-}
-
-.icon_description p{
-  font-size: 10px;
 }
 
 #kind{
