@@ -11,6 +11,11 @@ class CalendarController < ApplicationController
      # raise params.inspect
      @public_holidays = country.public_holidays_for_month(@date)
      # raise params.inspect
+
+      # raise params.inspect
+      # solar_date = @date.to_s
+
+
   end
 
   def index

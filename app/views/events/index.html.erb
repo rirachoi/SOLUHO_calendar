@@ -5,29 +5,48 @@
     <%= calendar @date do |date| %>
       <%= date.day  %>
       <div class="day-cell">
-      <% if @public_holidays.present? %>
-        <% @public_holidays.each do |holiday| %>
-          <% if holiday.date.strftime('%d').gsub(/^0/,'').to_s == date.day.to_s %>
-              <p>
-                  <% holi_name = holiday.local_name.to_s.split(" ").first %>
-                  <%= if holi_name == "New"
-                        image_tag('http://i.imgur.com/Sxa1rTl.png?1')
-                      elsif holi_name == "Easter"
-                        image_tag('http://i.imgur.com/zOhmINw.png?1')
-                      elsif holi_name == "Queen's"
-                        image_tag('http://i.imgur.com/YRAOZlL.png?1')
-                      elsif holi_name == "Christmas"
-                        image_tag('http://i.imgur.com/rvGvYSh.png?1')
-                      else
-                        image_tag('http://i.imgur.com/NxNrPHD.png?1')
-                      end %><br/>
-                      <%= holiday.local_name.to_s %>
-                </p>
+<!--////////////////////////////lunar-calanedar////////////////////// -->
+        <div class ='lunar_calendar'>
+          <% solar = date.to_s %>
+          <% solar_date_str = solar.gsub(/-/,"") %>
+          <% lunar = LunarToSolar.find_by(:solar_date => solar_date_str).lunar_date %>
+          <% @solar_data = LunarToSolar.find_by(:lunar_date => lunar ).solar_date %>
+          <% @solar = [solar[0,4],solar[4,2],solar[6,2]].join("-") %>
+          <% @lunar_str = [lunar[0,4],lunar[4,2],lunar[6,2]].join("-") %>
+          <% lunar_date_with_solar = LunarToSolar.find_by(:solar_date => @solar_data).lunar_date %>
+          <% solar_data = @solar_data[6,2] %>
+          <% @lunar_date = lunar_date_with_solar[4,7] %>
+          <% if solar_data.gsub(/^0/,"") == date.day.to_s %>
+            <span class ='lunar_calendar'><%= @lunar_date %><span>
           <% end %>
-        <% end %>
-      <% end %>
+        </div>
+<!--///////////////////////public-holiday- calanedar/////////////////// -->
+        <div class='public'>
+          <% if @public_holidays.present? %>
+          <% @public_holidays.each do |holiday| %>
+            <% if holiday.date.strftime('%d').gsub(/^0/,'').to_s == date.day.to_s %>
 
-      <% if @events.present? %>
+            <p>
+          <% holi_name = holiday.local_name.to_s.split(" ").first %>
+          <%= if holi_name == "New"
+                 image_tag('http://i.imgur.com/Sxa1rTl.png?1')
+              elsif holi_name == "Easter"
+                 image_tag('http://i.imgur.com/zOhmINw.png?1')
+              elsif holi_name == "Queen's"
+                 image_tag('http://i.imgur.com/YRAOZlL.png?1')
+              elsif holi_name == "Christmas"
+                 image_tag('http://i.imgur.com/rvGvYSh.png?1')
+              else
+                 image_tag('http://i.imgur.com/NxNrPHD.png?1')
+               end %><br/>
+                  <%= holiday.local_name.to_s %>
+            </p>
+          <% end %>
+            <% end %>
+          <% end %>
+        </div>
+<!--////////////////////////////event-calanedar////////////////////// -->
+        <% if @events.present? %>
         <% @events.each do |event| %>
           <% if event.date == date %>
             <p>
@@ -37,10 +56,9 @@
             </p>
           <% end %>
         <% end %>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
     <% end %>
-
 
   </div>
 </div>

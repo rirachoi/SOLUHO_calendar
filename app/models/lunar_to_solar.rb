@@ -10,12 +10,22 @@
 #  updated_at :datetime
 #
 class LunarToSolar < ActiveRecord::Base
-  def lunar_to_date
-    Date.new(lunar_date[0,4].to_i, lunar_date[4,2].to_i, lunar_date[6,2].to_i)
+  # def lunar_to_date
+  #   Date.new(lunar_date[0,4].to_i, lunar_date[4,2].to_i, lunar_date[6,2].to_i)
+  # end
+
+  #  def solar_to_date
+  #   Date.new(solar_date[0,4].to_i, solar_date[4,2].to_i, solar_date[6,2].to_i)
+  # end
+  def lunar_to_date_with_solar
+    @solar_date = @date.to_s
+    lunar = LunarToSolar.find_by(:solar_date => @solar_date).lunar_date
+    lunar_str = [lunar[0,4],lunar[4,2],lunar[6,2]].join("-")
+    lunar_date_with_solar = lunar_str == date.to_s
   end
 
-   def solar_to_date
-    Date.new(solar_date[0,4].to_i, solar_date[4,2].to_i, solar_date[6,2].to_i)
+  def solar_to_date_with_lunar
+    Date.parase(LunarToSolar.find_by(:lunar_date => @lunar_date).solar_date)
   end
 
   # def current_date
