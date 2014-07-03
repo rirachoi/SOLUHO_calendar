@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/calendar/show' => 'calendar#show'
   get '/calendar/index' => 'calendar#index'
   get '/calendar/international' => 'calendar#international'
-
+  get '/calendar/international_lists' => 'calendar#international_lists'
+  #calendar_international_lists_path
   get '/events/lists' => 'events#lists'
   # events_lists_path
   get '/events/kinds' => 'events#kinds'

@@ -7,14 +7,7 @@ body{
   color: white;
 }
 
-h1{
-  font-family: 'Cinzel', serif;
-  margin-bottom: 5px;
-  font-size: 40px;
-  color: rgba(180, 117, 50, 0.8); text-shadow:1px 1px 8px black;
-  margin-bottom: 30px;
-  margin-left: 10%;
-}
+
 #home_h1{
   margin-left: 25%;
   margin-bottom: 20px;
@@ -35,8 +28,41 @@ h1{
 .container h1, a{
   color: white;
 }
+/*
+.int_list_link{
+  padding: 3px;
+  background-color:; opacity: 0.5;
+  border-radius: 3px;
+  margin: 5px;
+}*/
+.int_list_link a, .int_country a, .aus_state a{
+  color: #DA9999;
+}
 
+.int_list_link a:hover{
+ color: #A30000;
+}
 
+#local_name{
+  margin-left: 10%;
+}
+
+span.holi_local{
+  font-size: 10px;
+}
+
+.aus_state {
+  text-align: center;
+}
+
+h1{
+  font-family: 'Cinzel', serif;
+  margin-bottom: 5px;
+  font-size: 40px;
+  color: rgba(180, 117, 50, 0.8); text-shadow:1px 1px 8px black;
+  margin-bottom: 30px;
+  margin-left: 10%;
+}
 /*
 table th:first-child td{
   color: rgba(208, 117, 94, 0.3);

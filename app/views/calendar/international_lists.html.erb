@@ -1,0 +1,48 @@
+<div class='int_country'>
+  <%= link_to 'Austria', calendar_international_lists_path(date: @date, :country_code => 'aut') %>
+  <%= link_to 'Belgium', calendar_international_lists_path(date: @date, :country_code => 'bel') %>
+  <%= link_to 'China', calendar_international_lists_path(date: @date, :country_code => 'chn') %>
+  <%= link_to 'Croatia', calendar_international_lists_path(date: @date, :country_code => 'hrv') %>
+  <%= link_to 'Czech Republic', calendar_international_lists_path(date: @date, :country_code => 'cze') %>
+  <%= link_to 'Denmark', calendar_international_lists_path(date: @date, :country_code => 'dnk') %>
+  <%= link_to 'England', calendar_international_lists_path(date: @date, :country_code => 'eng') %>
+  <%= link_to 'Estonia', calendar_international_lists_path(date: @date, :country_code => 'est') %>
+  <%= link_to 'Finland', calendar_international_lists_path(date: @date, :country_code => 'fin') %>
+  <%= link_to 'Hong Kong', calendar_international_lists_path(date: @date, :country_code => 'hkg') %>
+  <%= link_to 'Hungary', calendar_international_lists_path(date: @date, :country_code => 'hun') %>
+  <%= link_to 'Ireland', calendar_international_lists_path(date: @date, :country_code => 'irl') %>
+  <%= link_to 'Italy', calendar_international_lists_path(date: @date, :country_code => 'ita') %>
+  <%= link_to 'Japan', calendar_international_lists_path(date: @date, :country_code => 'jpn') %>
+  <%= link_to 'Norway', calendar_international_lists_path(date: @date, :country_code => 'nor') %>
+  <%= link_to 'Poland', calendar_international_lists_path(date: @date, :country_code => 'pol') %>
+  <%= link_to 'Portugal', calendar_international_lists_path(date: @date, :country_code => 'prt') %>
+  <%= link_to 'Russia', calendar_international_lists_path(date: @date, :country_code => 'rus') %>
+  <%= link_to 'South Africa', calendar_international_lists_path(date: @date, :country_code => 'zaf') %>
+  <%= link_to 'South Korea', calendar_international_lists_path(date: @date, :country_code => 'rok') %>
+</div>
+
+
+<div class='Public_holiday_list'>
+  <h1>Public Holiday</h1>
+   <ol>
+    <% @public_holidays.each do |holiday| %>
+      <li><% holi_name = holiday.english_name.to_s.split(" ").first %>
+        <%  if holi_name == "New"
+              holiday_image ='http://i.imgur.com/Sxa1rTl.png?1'
+            elsif holi_name == "Easter"
+                holiday_image = 'http://i.imgur.com/zOhmINw.png?1'
+            elsif holi_name == "Queen's"
+                holiday_image = 'http://i.imgur.com/YRAOZlL.png?1'
+            elsif holi_name == "Christmas"
+                holiday_image = 'http://i.imgur.com/rvGvYSh.png?1'
+            else
+                holiday_image = 'http://i.imgur.com/NxNrPHD.png?1'
+            end %>
+        <%= image_tag(holiday_image) %>
+        <%= holiday.english_name %> (<%= link_to(holiday.date, calendar_international_path(date: holiday.date, :country_code => @country_code))%>)<br/>
+        <p id='local_name'>Local Name : <%= holiday.local_name.to_s %>
+      </li>
+   <% end %>
+  </ol>
+ </div>
+</div>

@@ -1,3 +1,8 @@
 <h1 id='home_h1'>Plan Your Events! </h1>
 
-<%= link_to(image_tag('http://i.imgur.com/nDDC2Xx.jpg', :id => 'home_pic'),calendar_show_path(date: @date, :region => 'New South Wales'), :title => 'Current Calendar') %>
+<% if @current_user %>
+<%= link_to(image_tag('http://i.imgur.com/nDDC2Xx.jpg', :id => 'home_pic'), events_path(date: @date, :region => 'New South Wales'), :title => 'Current Calendar') %>
+<% else %>
+
+<%= link_to(image_tag('http://i.imgur.com/nDDC2Xx.jpg', :id => 'home_pic'), calendar_show_path(date: @date, :region => 'New South Wales'), :title => 'Current Calendar') %>
+<% end %>

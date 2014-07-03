@@ -20,6 +20,7 @@
   <%= link_to 'South Africa', calendar_international_path(date: @date, :country_code => 'zaf') %>
   <%= link_to 'South Korea', calendar_international_path(date: @date, :country_code => 'rok') %>
 </div>
+
 <div class="row">
   <div class="col-md-12 text-center">
     <div class="arrows">
@@ -41,6 +42,10 @@
       <%= link_to calendar_international_path(date: @date + 12.month, country_code: @country_code) do %>
         <i><%= image_tag('http://i.imgur.com/ErCSqCA.png?1')%></i>
       <% end %>
+    <div class='int_list_link'>
+      <%= link_to('International Public Holiday List', calendar_international_lists_path(date: @date, country_code: @country_code )) %>
+    </div>
     </div>
   </div>
 </div>
+
