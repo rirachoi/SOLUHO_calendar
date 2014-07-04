@@ -8,8 +8,6 @@ class CalendarController < ApplicationController
      @date = date_params
      country = Enrico::Country.new("aus", @region)
      @public_holidays = country.public_holidays_for_month(@date)
-
-
   end
 
   def index

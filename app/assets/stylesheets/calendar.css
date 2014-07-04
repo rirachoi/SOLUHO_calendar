@@ -23,6 +23,7 @@ body{
   max-width: 750px;
   margin-left: 25%;
   margin-right: 25%;
+  margin-bottom: 40px;
 }
 
 .container h1, a{
