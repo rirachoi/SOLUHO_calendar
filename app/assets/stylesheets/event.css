@@ -18,9 +18,13 @@
 .list > div {
  margin-top: 10px;
  display: inline-block;
-
  vertical-align: top;
  margin-left:10px;
+}
+
+.Events_list, .Public_holiday_list{
+  margin-left: 10px;
+  width: 340px;
 }
 
 .icon_description img{
