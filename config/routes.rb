@@ -6,11 +6,13 @@ Rails.application.routes.draw do
   get '/calendar/international' => 'calendar#international'
   get '/calendar/international_lists' => 'calendar#international_lists'
   #calendar_international_lists_path
+
   get '/events/lists' => 'events#lists'
   # events_lists_path
   get '/events/kinds' => 'events#kinds'
   get '/events/kind/:kind' =>'events#kind'
   resources :events
+
   resources :users, :except => 'show'
   get '/users/show' => 'users#show', :as => :user_show
 
