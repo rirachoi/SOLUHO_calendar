@@ -44,7 +44,7 @@ class EventsController < ApplicationController
       when 'Anniversary' then 'http://i.imgur.com/VfuWprd.png?1'
       when 'Wedding' then 'http://i.imgur.com/pEZwa3W.png?1'
       when 'Babyshower' then 'http://i.imgur.com/QgyWEnt.png?1'
-      when 'Dinner' then 'http://i.imgur.com/g2Pa7a9.png?'
+      when 'Dinner' then 'http://i.imgur.com/g2Pa7a9.png?1'
       when 'Party' then 'http://i.imgur.com/BIrp93l.png?1'
       when 'Travel' then 'http://i.imgur.com/OcIn4ds.png?1'
       when 'Meeting' then 'http://i.imgur.com/VgujmI2.png?1'
