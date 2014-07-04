@@ -111,7 +111,7 @@ label{
 }
 
 @media(max-width: 600px){
-  table{
-    width:600px;
+  #container{
+    width: 500px;
   }
 }
