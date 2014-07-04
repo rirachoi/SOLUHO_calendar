@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find params[:id]
     unless @user.id == @current_user.id
-    redirect_to calendar_user
+    redirect_to calendar_show_path
     end
   end
 
