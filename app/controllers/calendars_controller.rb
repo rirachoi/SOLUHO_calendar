@@ -1,16 +1,13 @@
-class CalendarController < ApplicationController
+class CalendarsController < ApplicationController
 
   def home
   end
 
-  def show
+  def index
      @region = params[:region]
      @date = date_params
      country = Enrico::Country.new("aus", @region)
      @public_holidays = country.public_holidays_for_month(@date)
-  end
-
-  def index
   end
 
   def international

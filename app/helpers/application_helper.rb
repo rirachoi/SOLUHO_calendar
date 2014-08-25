@@ -20,7 +20,7 @@ module ApplicationHelper
        links += "</li>"
 
        links += "<li>"
-       links += link_to('My Account', user_show_path)
+       links += link_to('My Account', user_path(@current_user.id))
        links += "</li>"
 
        links += "<li>"

@@ -1,9 +1,13 @@
-<%= form_tag '/login' do %>
-  <%= label_tag 'username' %>
-  <%= text_field_tag 'username', nil, :autofocus => true %>
+<div class="login_input">
 
-  <%= label_tag 'password' %>
-  <%= password_field_tag 'password' %>
+  <%= form_tag '/login' do %>
+    <%= label_tag 'username' %>
+    <%= text_field_tag 'username', nil, :autofocus => true %>
 
-  <%= submit_tag 'Login', :class => 'submit' %>
+    <%= label_tag 'password' %>
+    <%= password_field_tag 'password' %>
+
+    <%= submit_tag 'Login', :class => 'btn_login' %>
   <% end %>
+
+</div>

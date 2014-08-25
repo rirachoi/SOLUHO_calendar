@@ -4,5 +4,5 @@
 <%= link_to(image_tag('http://i.imgur.com/nDDC2Xx.jpg', :id => 'home_pic'), events_path(date: @date, :region => 'New South Wales'), :title => 'Current Calendar') %>
 <% else %>
 
-<%= link_to(image_tag('http://i.imgur.com/nDDC2Xx.jpg', :id => 'home_pic'), calendar_show_path(date: @date, :region => 'New South Wales'), :title => 'Current Calendar') %>
+<%= link_to(image_tag('http://i.imgur.com/nDDC2Xx.jpg', :id => 'home_pic'), calendars_path(date: @date, :region => 'New South Wales'), :title => 'Current Calendar') %>
 <% end %>

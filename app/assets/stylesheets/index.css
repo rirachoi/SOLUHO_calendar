@@ -5,26 +5,22 @@
   color: #E9AB98;
 }
 
-body h3{
-  margin-bottom: 5px;
+.home_name h3{
   color: #DDBFB6;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   text-align: center;
-  font-family: 'Bowlby One SC', cursive;
+  font-family: 'Bowlby One SC', "Myriad Pro";
 }
-
 
 nav {
   text-align: center;
-  font-family: serif;
+  font-family: 'Bowlby One SC', "Myriad Pro";
   padding: 10px;
   margin-bottom: 20px;
   background: #A30000;
   border-radius: 2px;
   max-width: 750px;
-  margin-left: 23%;
-  margin-right: 23%;
-  margin-top: 10px;
+  margin: 10px auto auto auto;
 }
 
 nav ul {
@@ -56,16 +52,41 @@ nav .blank{
 .sign_up > div{
   display: inline-block;
   vertical-align: top;
-}
-
-.sign_up_left img{
-  margin-top: 30px;
-  margin-left: 10px;
-  border: 20px solid rgba(160, 117, 94, 0.3);
+  margin: auto;
 }
 
 .user_form input{
-  width: 200px;
+  width: 650px;
+  height: 40px;
+  margin: auto auto 2% auto;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0.05);
+  color: rgba(0, 0, 0, 0.5);
+  font-family: 'Nunito', "Myriad Pro";
+}
+
+.login_input{
+  margin-top: 30px;
+}
+
+.login_input input{
+  width: 150px;
+  height: 30px;
+  font-size: 20px;
+  margin-left: 15px;
+  background-color: rgba(0,0,0,0.05);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.user_form input:hover,
+.login_input input:hover {
+  background-color: white;
+}
+
+.user_form label{
+  font-size: 25px;
+  margin: 2%;
+  text-align: left;
 }
 
 .container a:hover, a:hover{
@@ -82,33 +103,24 @@ nav .blank{
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-.sign_up input {
-  padding: 3px 0;
-  font-size: 13px;
-  margin-bottom: 0.5em;
-  font-family: 'Nunito', sans-serif;
-  color: black;
-}
-
-.submit_sign_up input{
-  background-color: red;
+.submit_sign_up input, .login_input .btn_login{
+  background-color: rgba(220, 50, 50, 0.9);
   color: white;
   margin-top: 30px;
-  opacity: 1;
 }
 
-.submit{
+.submit_sign_up input:hover,
+.login_input .btn_login:hover{
   background-color: red;
-  color: white;
-  margin-top: 30px;
-  opacity: 1;
-  margin-left: 10px;
 }
+
 
 label{
   color: #A30000;
   margin: 5px;
 }
+
+
 
 @media(max-width: 600px){
   #container{

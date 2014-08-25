@@ -7,14 +7,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create user_params
+    @user = User.new user_params
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    birthday = @user.dob.to_s
+    birthday = @date.year.to_s + "-" + birthday[5,9]
+    @user.events.new(:name => 'My Birthday', :date => Date.parse(birthday), :image => 'http://i.imgur.com/7NfALqS.png?1', :user_id => @user.id );
+    @user.save
+    #@user = User.create user_params
     if @user.save
-      @date = params[:date] ? Date.parse(params[:date]) : Date.today
-      birthday = @user.dob.to_s
-      birthday = @date.year.to_s + "-" + birthday[5,9]
-      user_birthday = Event.create(:name => 'My Birthday', :date => Date.parse(birthday), :image => 'http://i.imgur.com/7NfALqS.png?1', :user_id => @user.id )
-      user_birthday.save
-      @user.events << user_birthday
+      # @date = params[:date] ? Date.parse(params[:date]) : Date.today
+      # birthday = @user.dob.to_s
+      # birthday = @date.year.to_s + "-" + birthday[5,9]
+      # user_birthday = Event.create(:name => 'My Birthday', :date => Date.parse(birthday), :image => 'http://i.imgur.com/7NfALqS.png?1', :user_id => @user.id )
+      # user_birthday.save
+      # @user.events << user_birthday
       redirect_to root_path
     else
       render :new
@@ -44,6 +50,7 @@ class UsersController < ApplicationController
     if @user.nil?
       redirect_to root_path
     end
+    @user = User.find params[:id]
   end
 
   def destroy

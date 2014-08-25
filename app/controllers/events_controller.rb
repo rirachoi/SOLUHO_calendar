@@ -14,7 +14,7 @@ class EventsController < ApplicationController
     event.save
     @current_user.events << event
     # raise params.inspect
-    redirect_to event
+    redirect_to event_path
   end
 
   def new
@@ -24,7 +24,7 @@ class EventsController < ApplicationController
   def edit
     @event = Event.find params[:id]
     unless @event.user_id == @current_user.id
-      redirect_to root
+      redirect_to root_path
     end
   end
 
@@ -71,14 +71,14 @@ class EventsController < ApplicationController
     event.update event_params
     event.save
 
-    redirect_to event
+    redirect_to event_path
   end
 
   def destroy
     event = Event.find params[:id]
     event.destroy
 
-    redirect_to events
+    redirect_to events_path
   end
 
   private

@@ -1,4 +1,4 @@
-# == Schema Information
+ # == Schema Information
 #
 # Table name: users
 #
@@ -17,4 +17,6 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :events
   validates :username, :presence => true, :length => { :minimum => 2 }
+
+
 end
