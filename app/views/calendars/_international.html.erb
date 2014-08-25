@@ -1,26 +1,10 @@
 <div class='int_country'>
-  <%= link_to 'Austria', calendars_international_path(date: @date, :country_code => 'aut') %>
-  <%= link_to 'Belgium', calendars_international_path(date: @date, :country_code => 'bel') %>
-  <%= link_to 'China', calendars_international_path(date: @date, :country_code => 'chn') %>
-  <%= link_to 'Croatia', calendars_international_path(date: @date, :country_code => 'hrv') %>
-  <%= link_to 'Czech Republic', calendars_international_path(date: @date, :country_code => 'cze') %>
-  <%= link_to 'Denmark', calendars_international_path(date: @date, :country_code => 'dnk') %>
-  <%= link_to 'England', calendars_international_path(date: @date, :country_code => 'eng') %>
-  <%= link_to 'Estonia', calendars_international_path(date: @date, :country_code => 'est') %>
-  <%= link_to 'Finland', calendars_international_path(date: @date, :country_code => 'fin') %>
-  <%= link_to 'Hong Kong', calendars_international_path(date: @date, :country_code => 'hkg') %>
-  <%= link_to 'Hungary', calendars_international_path(date: @date, :country_code => 'hun') %>
-  <%= link_to 'Ireland', calendars_international_path(date: @date, :country_code => 'irl') %>
-  <%= link_to 'Italy', calendars_international_path(date: @date, :country_code => 'ita') %>
-  <%= link_to 'Japan', calendars_international_path(date: @date, :country_code => 'jpn') %>
-  <%= link_to 'Norway', calendars_international_path(date: @date, :country_code => 'nor') %>
-  <%= link_to 'Poland', calendars_international_path(date: @date, :country_code => 'pol') %>
-  <%= link_to 'Portugal', calendars_international_path(date: @date, :country_code => 'prt') %>
-  <%= link_to 'Russia', calendars_international_path(date: @date, :country_code => 'rus') %>
-  <%= link_to 'South Africa', calendars_international_path(date: @date, :country_code => 'zaf') %>
-  <%= link_to 'South Korea', calendars_international_path(date: @date, :country_code => 'rok') %>
+  <% Regions.country.each do |country| %>
+    <% country.each do |name, code| %>
+      <%= link_to name, calendars_international_path(date: @date, country_code: code) %>
+    <% end %>
+  <% end %>
 </div>
-
 
 <div class="row">
   <div class="col-md-12 text-center">

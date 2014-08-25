@@ -22,9 +22,13 @@
  margin-left:10px;
 }
 
-.Events_list, .Public_holiday_list{
+.Events_list {
   margin-left: 10px;
   width: 340px;
+}
+
+.Public_holiday_list{
+  width: 500px;
 }
 
 .icon_description img{

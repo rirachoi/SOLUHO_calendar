@@ -1,11 +1,11 @@
-
 <% if @events.present? %>
   <h1>Events for <%= params[:kind] %></h1>
     <% @events.each do |event| %>
-  <p><%= image_tag(event.image)%> <%= event.name %>
-    (<%= link_to(event.date, events_path(date: event.date, :region => @region)) %>)
-  </p>
-  <% end %>
+      <p>
+        <%= image_tag(event.image)%> <%= event.name %>
+        (<%= link_to(event.date, events_path(date: event.date, :region => @region)) %>)
+      </p>
+    <% end %>
 <% else %>
   <h4> You don't have any events :) </h4>
 <% end %>

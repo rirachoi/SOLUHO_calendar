@@ -1,12 +1,9 @@
 <div class='aus_state'>
-<%= link_to 'NSW', calendars_path(date: @date, :region => 'New South Wales') %>
-<%= link_to 'VIC', calendars_path(date: @date, :region => 'Victoria') %>
-<%= link_to 'QLD', calendars_path(date: @date, :region => 'Queensland') %>
-<%= link_to 'WA', calendars_path(date: @date, :region => 'Western Australia') %>
-<%= link_to 'SA', calendars_path(date: @date, :region => 'South Australia') %>
-<%= link_to 'ACT', calendars_path(date: @date, :region => 'Australian Capital Territory') %>
-<%= link_to 'TAS', calendars_path(date: @date, :region => 'Tasmania') %>
-<%= link_to 'NT', calendars_path(date: @date, :region => 'Northern Territory') %>
+  <% Regions.state.each do |state| %>
+    <% state.each do |key, val| %>
+      <%= link_to key, events_path(date: @date, :region => val) %>
+    <% end %>
+  <% end %>
 </div>
 
 <div class="row">

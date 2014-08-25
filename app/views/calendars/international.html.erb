@@ -5,7 +5,8 @@
     <%= calendar @date do |date| %>
       <%= date.day  %>
       <div class="day-cell">
-<!--////////////////////////////lunar-calanedar////////////////////// -->
+
+<!--####### lunar-calanedar ####### -->
         <div class='lunar_calendar'>
           <% solar = date.to_s %>
           <% solar_date_str = solar.gsub(/-/,"") %>
@@ -20,30 +21,29 @@
             <span class ='lunar_calendar'><%= @lunar_date %></span>
           <% end %>
         </div>
-<!--///////////////////////public-holiday- calanedar/////////////////// -->
+
+<!--####### public-holiday-calanedar #######-->
         <div class='public'>
           <% if @public_holidays.present? %>
-        <% @public_holidays.each do |holiday| %>
-          <% if holiday.date.strftime('%d').gsub(/^0/,'').to_s == date.day.to_s %>
-
-            <p>
-               <% holi_name = holiday.english_name.to_s.split(" ").first %>
-                <%= if holi_name == "New"
-                        image_tag('http://i.imgur.com/Sxa1rTl.png?1')
-                      elsif holi_name == "Easter"
-                        image_tag('http://i.imgur.com/zOhmINw.png?1')
-                      elsif holi_name == "Queen's"
-                        image_tag('http://i.imgur.com/YRAOZlL.png?1')
-                      elsif holi_name == "Christmas"
-                        image_tag('http://i.imgur.com/rvGvYSh.png?1')
-                      else
-                        image_tag('http://i.imgur.com/NxNrPHD.png?1')
-                      end %><br/>
+            <% @public_holidays.each do |holiday| %>
+              <% if holiday.date.strftime('%d').gsub(/^0/,'').to_s == date.day.to_s %>
+                <p>
+                  <% holi_name = holiday.english_name.to_s.split(" ").first %>
+                    <%= if holi_name == "New"
+                          image_tag('http://i.imgur.com/Sxa1rTl.png?1')
+                        elsif holi_name == "Easter"
+                          image_tag('http://i.imgur.com/zOhmINw.png?1')
+                        elsif holi_name == "Queen's"
+                          image_tag('http://i.imgur.com/YRAOZlL.png?1')
+                        elsif holi_name == "Christmas"
+                          image_tag('http://i.imgur.com/rvGvYSh.png?1')
+                        else
+                          image_tag('http://i.imgur.com/NxNrPHD.png?1')
+                        end %><br/>
                   <span class='holi_local'><%= holiday.local_name.to_s %></span><br/><%= holiday.english_name.to_s if holiday.local_name != holiday.english_name %>
-            </p>
-
-          <% end %>
-        <% end %>
+                </p>
+              <% end %>
+            <% end %>
           <% end %>
         </div>
       </div>

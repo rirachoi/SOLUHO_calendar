@@ -1,4 +1,4 @@
-  <p id='kind'>Personal Events</p>
+<p id='kind'>Personal Events</p>
 <div class='icon_description'>
   <p><%= link_to(image_tag('http://i.imgur.com/VfuWprd.png?1', :title => 'Anniversary'),'/events/kind/Anniversary')%><br/>Anniversary</p>
   <p><%= link_to(image_tag('http://i.imgur.com/7NfALqS.png?1', :title => 'Birthday'), '/events/kind/Birthday') %><br/>Birthday</p>
@@ -45,20 +45,20 @@
         <%  if holi_name == "New"
               holiday_image ='http://i.imgur.com/Sxa1rTl.png?1'
             elsif holi_name == "Easter"
-                holiday_image = 'http://i.imgur.com/zOhmINw.png?1'
+              holiday_image = 'http://i.imgur.com/zOhmINw.png?1'
             elsif holi_name == "Queen's"
-                holiday_image = 'http://i.imgur.com/YRAOZlL.png?1'
+              holiday_image = 'http://i.imgur.com/YRAOZlL.png?1'
             elsif holi_name == "Christmas"
-                holiday_image = 'http://i.imgur.com/rvGvYSh.png?1'
+              holiday_image = 'http://i.imgur.com/rvGvYSh.png?1'
             else
-                holiday_image = 'http://i.imgur.com/NxNrPHD.png?1'
+              holiday_image = 'http://i.imgur.com/NxNrPHD.png?1'
             end %>
+
         <%= image_tag(holiday_image) %>
         <%= holiday.local_name.to_s %>
         (<%= link_to(holiday.date, events_path(date: holiday.date, :region => "New South Wales"))%>)
       </li>
    <% end %>
   </ol>
-  <h1></h1>
  </div>
 </div>
