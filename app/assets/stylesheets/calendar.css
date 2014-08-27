@@ -24,7 +24,7 @@ body{
 .container{
   max-width: 750px;
   margin: auto;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .row{
@@ -38,6 +38,7 @@ body{
 
 .int_list_link a, .int_country a, .aus_state a{
   color: #DA9999;
+  font-size: 20px;
 }
 
 .int_list_link a:hover{

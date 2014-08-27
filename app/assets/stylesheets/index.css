@@ -8,19 +8,25 @@
 .home_name h3{
   color: #DDBFB6;
   margin-bottom: 35px;
-  text-align: center;
   font-family: 'Bowlby One SC', "Myriad Pro";
+  text-align: center;
+}
+
+.home_name{
+  height: 70px;
+  width: 750px;
+  background-color: white;
+  text-align: center;
 }
 
 nav {
   text-align: center;
   font-family: 'Bowlby One SC', "Myriad Pro";
   padding: 10px;
-  margin-bottom: 20px;
   background: #A30000;
   border-radius: 2px;
   max-width: 750px;
-  margin: 10px auto auto auto;
+  margin: auto auto 10px auto;
 }
 
 nav ul {
@@ -122,15 +128,9 @@ label{
 
 
 
-@media(max-width: 500px){
+@media(max-width: 750px){
   body{
     background: none;
     background-color: rgba(225, 225, 225, 0.7);
   }
-
-  .container{
-    width: 400px;
-    margin: auto 0;
-  }
-
 }
