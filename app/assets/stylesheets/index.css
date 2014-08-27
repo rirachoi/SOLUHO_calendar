@@ -17,6 +17,7 @@
   width: 750px;
   background-color: white;
   text-align: center;
+  margin: auto;
 }
 
 nav {
@@ -75,17 +76,20 @@ nav .blank{
   margin-top: 30px;
 }
 
-.login_input input{
+.login_input input,
+.event_form input,
+.event_form select{
   width: 150px;
   height: 30px;
   font-size: 20px;
-  margin-left: 15px;
+  margin-left: 10px;
   background-color: rgba(0,0,0,0.05);
   color: rgba(0, 0, 0, 0.5);
 }
 
 .user_form input:hover,
-.login_input input:hover {
+.login_input input:hover,
+.event_form input:hover {
   background-color: white;
 }
 
@@ -109,16 +113,30 @@ nav .blank{
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-.submit_sign_up input, .login_input .btn_login{
+.submit_sign_up input,
+.login_input .btn_login,
+.event_form .submit{
   background-color: rgba(220, 50, 50, 0.9);
   color: white;
-  margin-top: 30px;
+  margin: 30px auto auto auto;
+}
+
+.login_input .btn_login{
+  margin-left: 10px;
+}
+
+.event_form .submit{
+  width: 250px;
+  margin-left: 30%;
 }
 
 .submit_sign_up input:hover,
-.login_input .btn_login:hover{
+.login_input .btn_login:hover,
+.event_form .submit:hover{
   background-color: red;
 }
+
+
 
 
 label{
@@ -132,5 +150,9 @@ label{
   body{
     background: none;
     background-color: rgba(225, 225, 225, 0.7);
+  }
+
+  .Events_list, .Public_holiday_list{
+    width: 325px;
   }
 }

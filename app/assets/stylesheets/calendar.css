@@ -23,6 +23,7 @@ body{
 
 .container{
   max-width: 750px;
+  min-height: 1020px;
   margin: auto;
   background-color: white;
 }
