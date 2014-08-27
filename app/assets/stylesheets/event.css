@@ -22,12 +22,12 @@
  margin-left:10px;
 }
 
-.Events_list {
+.Events_list, .Public_holiday_list {
   margin-left: 10px;
   width: 340px;
 }
 
-.Public_holiday_list{
+.int_Public_holiday_list{
   width: 500px;
 }
 
@@ -89,6 +89,7 @@
   height: 100px;
   width: 100px;
 }
+
 
 td{
   width: 100px;
