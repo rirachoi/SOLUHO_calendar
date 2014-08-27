@@ -1,4 +1,4 @@
-<%= render :partial => 'events-calendar' %>
+<%= render :partial => 'eventscalendar' %>
 
 <div class="row">
   <div class="col-md-12">
@@ -6,7 +6,7 @@
       <%= date.day  %>
       <div class="day-cell">
 
-<!--////////////////////////////lunar-calanedar////////////////////// -->
+<!--##### lunar-calanedar ##### -->
 
         <div class ='lunar_calendar'>
           <% solar = date.to_s %>
@@ -24,7 +24,7 @@
           <% end %>
         </div>
 
-<!--///////////////////////public-holiday- calanedar/////////////////// -->
+<!-- ##### public-holiday-calanedar ##### -->
 
         <div class='public'>
           <% if @public_holidays.present? %>

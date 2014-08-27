@@ -24,6 +24,7 @@ body{
 .container{
   max-width: 750px;
   margin: auto;
+  background-color: whitesmoke;
 }
 
 .row{
