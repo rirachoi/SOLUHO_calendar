@@ -15,7 +15,9 @@ class UsersController < ApplicationController
     @user.save
 
     if @user.save
-      redirect_to root_path
+      session[:user_id] = @user.id
+      authenticate_user
+      redirect_to events_lists_path
     else
       render :new
     end
