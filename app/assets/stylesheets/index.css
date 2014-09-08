@@ -85,9 +85,9 @@ nav .blank{
   margin: 3% auto auto 17%;
 }
 
-.user_form input, .submit_sign_up input{
+/*.user_form input, .submit_sign_up input{
   margin-left: 20%;
-}
+}*/
 
 .user_form input:hover,
 .login_input input:hover,
@@ -150,11 +150,20 @@ label{
     max-width: 960px;
   }
 
-  #home_pic{
+  .user_form {
+    margin-left: 35%
+  }
+
+  .login_input{
     margin-left: 10%;
   }
 
+  #home_pic{
+    margin-left: 13%;
+  }
+
   .Events_list, .Public_holiday_list{
-    width: 325px;
+    width: 450px;
+    margin-bottom: 5%;
   }
 }

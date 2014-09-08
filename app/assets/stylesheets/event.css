@@ -52,11 +52,6 @@
   width: 70px;
 }
 
-.user_form, .login_input{
-  display: inline-block;
-}
-
-
 .show_options p, .show_options a, td a{
   display: inline-block;
   padding: 3px;
