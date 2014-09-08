@@ -85,9 +85,9 @@ nav .blank{
   margin: 3% auto auto 17%;
 }
 
-/*.user_form input, .submit_sign_up input{
+.user_form input, .submit_sign_up input{
   margin-left: 20%;
-}*/
+}
 
 .user_form input:hover,
 .login_input input:hover,
