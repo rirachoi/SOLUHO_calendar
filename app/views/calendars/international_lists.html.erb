@@ -12,6 +12,7 @@
    <ol>
     <% @public_holidays.each do |holiday| %>
       <li><% holi_name = holiday.english_name.to_s.split(" ").first %>
+        <!-- Set icons for World-Famous Holiday ex) Christmas -->
         <%  if holi_name == "New"
               holiday_image ='http://i.imgur.com/Sxa1rTl.png?1'
             elsif holi_name == "Easter"
@@ -24,6 +25,8 @@
                 holiday_image = 'http://i.imgur.com/NxNrPHD.png?1'
             end %>
         <%= image_tag(holiday_image) %>
+
+        <!-- Link to the actual date in the seletect country's calendar -->
         <%= holiday.english_name %> (<%= link_to(holiday.date, calendars_international_path(date: holiday.date, :country_code => @country_code))%>)<br/>
         <p id='local_name'>Local Name : <%= holiday.local_name.to_s %>
       </li>

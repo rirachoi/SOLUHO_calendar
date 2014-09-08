@@ -2,18 +2,19 @@ class EventsController < ApplicationController
 
   def index
      @region = params[:region]
+     # Setting current date dynamically
      @date = date_params
+     # Australia needs state(=@region)
      country = Enrico::Country.new("aus", @region)
+     # To display public holiday and the user's events together.
      @public_holidays = country.public_holidays_for_month(@date)
      @events = Event.where(:user_id => @current_user.id)
-     # raise params.inspect
   end
 
   def create
     event = Event.create event_params
     event.save
     @current_user.events << event
-    # raise params.inspect
     redirect_to event_path
   end
 
@@ -30,16 +31,18 @@ class EventsController < ApplicationController
 
   def lists
     @date = date_params
-    # @event = Event.find params[:id]
-    @events = Event.where(:user_id => @current_user.id)
-    @date = date_params
+    @events = Event.where(:user_id => @current_user.id).order(:date).reverse
+    # @past_events = @events[:date] < @date
+    # @future_events = @events[:date] > @date
     country = Enrico::Country.new("aus", "New South Wales")
     @public_holidays = country.public_holidays_for_year(@date)
-    # raise params
   end
 
   def kind
-  image = case params[:kind]
+    # Insead of Creating a new table I wrote this....
+    # I agree it is not the best way but it was my first project!!
+    # I don't want change this but keep it as a memory lol!
+    image = case params[:kind]
       when 'Birthday' then 'http://i.imgur.com/7NfALqS.png?1'
       when 'Anniversary' then 'http://i.imgur.com/VfuWprd.png?1'
       when 'Wedding' then 'http://i.imgur.com/pEZwa3W.png?1'
@@ -52,7 +55,7 @@ class EventsController < ApplicationController
       when 'Presentation' then 'http://i.imgur.com/f10BbHs.png?1'
       when 'Conference' then 'http://i.imgur.com/5PrjrVs.png?1'
       when 'Others' then 'http://i.imgur.com/tAT8AUw.png?1'
-      end
+    end
     @events = Event.where(:user_id => @current_user.id, :image => image)
     render :kinds
   end
@@ -83,6 +86,7 @@ class EventsController < ApplicationController
 
   private
   def date_params
+    # It is a way to set current day dynamically
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 

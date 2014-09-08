@@ -1,11 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Cinzel:900);
 
 body{
-  background: url('http://i.imgur.com/gtDDl01.jpg');
+  background-image: url('http://i.imgur.com/gtDDl01.jpg');
   background-size: 100% 100%;
   background-attachment: fixed;
   color: white;
   margin: auto;
+  background-color: none;
 }
 
 

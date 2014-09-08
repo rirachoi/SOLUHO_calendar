@@ -146,10 +146,23 @@ label{
 
 
 
-@media(max-width: 750px){
+@media(max-width: 1024px){
   body{
-    background: none;
-    background-color: rgba(225, 225, 225, 0.7);
+    background-image: none;
+    background-color: rgba(209, 199, 199, 0.5);
+  }
+
+  .container{
+    max-width: 1000px;
+  }
+
+  nav {
+    max-width: 960px;
+  }
+
+  .row{
+    width: 960px;
+    max-width: 960px;
   }
 
   .Events_list, .Public_holiday_list{

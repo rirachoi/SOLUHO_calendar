@@ -9,21 +9,25 @@
 <div class="row">
   <div class="col-md-12 text-center">
     <div class="well controls">
-
+      <!-- Link to A YEAR AGO -->
       <%= link_to events_path(date: @date - 12.month, :region => @region) do %>
         <i><%=image_tag('http://i.imgur.com/9GN8wMm.png?1')%></i>
       <% end %>
 
+       <!-- Link to A MONTH AGO -->
       <%= link_to events_path(date: @date - 1.month, :region => @region) do %>
         <i ><%= image_tag("http://i.imgur.com/ca2RSq3.png?1")%></i>
       <% end %>
 
-      <span id='current_calendar_date'><%= "#{@date.strftime("%B")} #{@date.year}" %></span>
+       <!-- Display Current Date -->
+      <span id='current_calendar_date'><%= "#{ @date.strftime("%B") } #{ @date.year }" %></span>
 
+       <!-- Link to A MONTH LATER -->
       <%= link_to events_path(date: @date + 1.month, :region => @region) do %>
         <i ><%= image_tag('http://i.imgur.com/obLPimz.png?1')%></i>
       <% end %>
 
+       <!-- Link to A YEAR LATER -->
       <%= link_to events_path(date: @date + 12.month, :region => @region) do %>
         <i><%= image_tag('http://i.imgur.com/ErCSqCA.png?1')%></i>
       <% end %>

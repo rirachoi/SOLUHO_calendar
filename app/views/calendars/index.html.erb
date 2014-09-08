@@ -8,18 +8,30 @@
       <div class="day-cell">
 
 <!--####### lunar-calanedar #######-->
-        <div class='lunar_calendar'>
+        <div class ='lunar_calendar'>
+           <!-- Making today's date to the string -->
           <% solar = date.to_s %>
+           <!-- Solar string is 'YYYY-MM-DD',
+           but it needed to be 'YYYYMMDD' to compare to lunar dates
+           in CSV file that pushed into LunarToSolar table -->
           <% solar_date_str = solar.gsub(/-/,"") %>
+           <!-- Finding the lunar date -->
           <% lunar = LunarToSolar.find_by(:solar_date => solar_date_str).lunar_date %>
+           <!-- Finding the solar date -->
           <% @solar_data = LunarToSolar.find_by(:lunar_date => lunar ).solar_date %>
+           <!-- Changing back 'YYYYMMDD' to 'YYYY-MM-DD' to use Date class -->
           <% @solar = [solar[0,4],solar[4,2],solar[6,2]].join("-") %>
           <% @lunar_str = [lunar[0,4],lunar[4,2],lunar[6,2]].join("-") %>
+
           <% lunar_date_with_solar = LunarToSolar.find_by(:solar_date => @solar_data).lunar_date %>
+           <!-- Grab Only DD(date) to display in the month calendar -->
           <% solar_data = @solar_data[6,2] %>
           <% @lunar_date = lunar_date_with_solar[4,7] %>
+            <!-- /^0/ : Delete only first Zero.
+               because date's single number of day is without Zero
+               ex) 2014-05-01's day is 1.  -->
           <% if solar_data.gsub(/^0/,"") == date.day.to_s %>
-            <span class ='lunar_calendar'><%= @lunar_date %></span>
+            <span class ='lunar_calendar'><%= @lunar_date %><span>
           <% end %>
         </div>
 
@@ -27,9 +39,13 @@
         <div class='public'>
           <% if @public_holidays.present? %>
             <% @public_holidays.each do |holiday| %>
+              <!-- /^0/ : Delete only first Zero.
+               because date's single number of day is without Zero
+               ex) 2014-05-01's day is 1.  -->
               <% if holiday.date.strftime('%d').gsub(/^0/,'').to_s == date.day.to_s %>
 
-                <p>
+                <p> <!-- Set icons for World-Famous Holiday
+                    ex) Christmas -->
                   <% holi_name = holiday.local_name.to_s.split(" ").first %>
                   <%= if holi_name == "New"
                         image_tag('http://i.imgur.com/Sxa1rTl.png?1')

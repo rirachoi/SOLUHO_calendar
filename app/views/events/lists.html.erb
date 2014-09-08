@@ -1,5 +1,7 @@
 <p id='kind'>Personal Events</p>
 <div class='icon_description'>
+   <!-- Wrote every single events kind and it's routes.....
+    I now agree it is not the best way but it was my first project!!! lol -->
   <p><%= link_to(image_tag('http://i.imgur.com/VfuWprd.png?1', :title => 'Anniversary'),'/events/kind/Anniversary')%><br/>Anniversary</p>
   <p><%= link_to(image_tag('http://i.imgur.com/7NfALqS.png?1', :title => 'Birthday'), '/events/kind/Birthday') %><br/>Birthday</p>
   <p><%= link_to(image_tag('http://i.imgur.com/pEZwa3W.png?1', :title => 'Wedding'), '/events/kind/Wedding')%><br/>Wedding</p>
@@ -41,6 +43,7 @@
   <h1>Public Holiday</h1>
    <ol>
     <% @public_holidays.each do |holiday| %>
+      <!-- Set icons for World-Famous Holiday ex) Christmas -->
       <li><% holi_name = holiday.local_name.to_s.split(" ").first %>
         <%  if holi_name == "New"
               holiday_image ='http://i.imgur.com/Sxa1rTl.png?1'

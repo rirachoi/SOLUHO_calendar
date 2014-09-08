@@ -10,26 +10,33 @@
   <div class="col-md-12 text-center">
     <div class="arrows">
 
+      <!-- Link to A YEAR AGO -->
       <%= link_to calendars_international_path(date: @date - 12.month, country_code: @country_code ) do %>
         <i><%=image_tag('http://i.imgur.com/9GN8wMm.png?1')%></i>
       <% end %>
 
+      <!-- Link to A MONTH AGO -->
       <%= link_to calendars_international_path(date: @date - 1.month, country_code: @country_code) do %>
         <i><%= image_tag("http://i.imgur.com/ca2RSq3.png?1")%></i>
       <% end %>
 
+      <!-- Display Current Date -->
       <span id='current_calendar_date'><%= "#{@date.strftime("%B")} #{@date.year}" %></span>
 
+      <!-- Link to A MONTH LATER -->
       <%= link_to calendars_international_path(date: @date + 1.month, country_code: @country_code) do %>
         <i ><%= image_tag('http://i.imgur.com/obLPimz.png?1')%></i>
       <% end %>
 
+       <!-- Link to A YEAR LATER -->
       <%= link_to calendars_international_path(date: @date + 12.month, country_code: @country_code) do %>
         <i><%= image_tag('http://i.imgur.com/ErCSqCA.png?1')%></i>
       <% end %>
-    <div class='int_list_link'>
-      <%= link_to('International Public Holiday List', calendars_international_lists_path(date: @date, country_code: @country_code )) %>
-    </div>
+
+      <!-- Link to INTERNATIONAL HOLIDAY LIST!-->
+      <div class='int_list_link'>
+        <%= link_to('International Public Holiday List', calendars_international_lists_path(date: @date, country_code: @country_code )) %>
+      </div>
     </div>
   </div>
 </div>
