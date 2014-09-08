@@ -62,29 +62,31 @@ nav .blank{
   margin: auto;
 }
 
-.user_form input{
-  width: 650px;
+.user_form input,
+.login_input input,
+.event_form input,
+.event_form select{
+  width: 500px;
   height: 40px;
-  margin: auto auto 2% auto;
   font-size: 20px;
+  margin: auto auto 2% 17%;
   background-color: rgba(0,0,0,0.05);
   color: rgba(0, 0, 0, 0.5);
   font-family: 'Nunito', "Myriad Pro";
 }
 
-.login_input{
-  margin-top: 30px;
+.submit_sign_up input,
+.login_input .btn_login,
+.event_form .submit{
+  width: 500px;
+  height: 40px;
+  background-color: rgba(220, 50, 50, 0.9);
+  color: white;
+  margin: 3% auto auto 17%;
 }
 
-.login_input input,
-.event_form input,
-.event_form select{
-  width: 150px;
-  height: 30px;
-  font-size: 20px;
-  margin-left: 10px;
-  background-color: rgba(0,0,0,0.05);
-  color: rgba(0, 0, 0, 0.5);
+.user_form input, .submit_sign_up input{
+  margin-left: 20%;
 }
 
 .user_form input:hover,
@@ -93,10 +95,11 @@ nav .blank{
   background-color: white;
 }
 
-.user_form label{
+.user_form label,
+.login_input label,
+.event_form label{
   font-size: 25px;
-  margin: 2%;
-  text-align: left;
+  margin: 2% auto auto 23%;
 }
 
 .container a:hover, a:hover{
@@ -113,22 +116,8 @@ nav .blank{
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-.submit_sign_up input,
-.login_input .btn_login,
-.event_form .submit{
-  background-color: rgba(220, 50, 50, 0.9);
-  color: white;
-  margin: 30px auto auto auto;
-}
 
-.login_input .btn_login{
-  margin-left: 10px;
-}
 
-.event_form .submit{
-  width: 250px;
-  margin-left: 30%;
-}
 
 .submit_sign_up input:hover,
 .login_input .btn_login:hover,
@@ -136,12 +125,8 @@ nav .blank{
   background-color: red;
 }
 
-
-
-
 label{
   color: #A30000;
-  margin: 5px;
 }
 
 
@@ -163,6 +148,10 @@ label{
   .row{
     width: 960px;
     max-width: 960px;
+  }
+
+  #home_pic{
+    margin-left: 10%;
   }
 
   .Events_list, .Public_holiday_list{

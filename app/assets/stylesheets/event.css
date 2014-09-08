@@ -52,10 +52,10 @@
   width: 70px;
 }
 
-.event_form p, .user_form{
+.user_form, .login_input{
   display: inline-block;
-  margin: 20px;
 }
+
 
 .show_options p, .show_options a, td a{
   display: inline-block;
