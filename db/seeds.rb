@@ -98,11 +98,8 @@ e13 = Event.create(
   )
 e14 = Event.create(
   :name => 'Meet and Greet',
-  :date => "2014-09-09",
+  :date => "2014-09-10",
   :image => 'http://i.imgur.com/VgujmI2.png?1',
   :user_id => u1.id
   )
 
-u1.events << e1 << e2 << e3 << e4 << e5 << e6 << e7 << e8 << e9 << e10 << e11 << e12
-
-u2.events << e13
