@@ -146,13 +146,8 @@ label{
     max-width: 960px;
   }
 
-/*  .row{
-    width: 960px;
-    max-width: 960px;
-  }*/
-
   .Events_list, .Public_holiday_list{
-    width: 350px;
+    width: 300px;
     margin-bottom: 5%;
   }
 }
