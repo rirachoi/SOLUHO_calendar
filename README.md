@@ -48,7 +48,7 @@ $ git clone https://github.com/rirachoi/SOLUHO_calendar.git soluho_calendar/
 
 
 Background Story - SOLUHO Calendar
------------------------------------
+===================================
 
 ![alt tag](http://i.imgur.com/s0X4JHc.jpg)
 
