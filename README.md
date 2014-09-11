@@ -50,7 +50,7 @@ $ git clone https://github.com/rirachoi/SOLUHO_calendar.git soluho_calendar/
 Background Story - SOLUHO Calendar
 ===================================
 
-![alt tag](http://i.imgur.com/s0X4JHc.jpg)
+![alt tag](http://i.imgur.com/7bexGhS.jpg)
 
 
 [enrico-gem]:https://github.com/easyPEP/enrico
