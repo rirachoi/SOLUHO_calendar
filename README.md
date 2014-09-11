@@ -44,8 +44,14 @@ $ git clone https://github.com/rirachoi/SOLUHO_calendar.git soluho_calendar/
 ```
 
 
-
 **Free Software, Hell Yeah!**
+
+
+Background Story - SOLUHO Calendar
+-----------------------------------
+
+![alt tag](http://i.imgur.com/s0X4JHc.jpg)
+
 
 [enrico-gem]:https://github.com/easyPEP/enrico
 [enrico-json-api]:http://kayaposoft.com/enrico/json/
